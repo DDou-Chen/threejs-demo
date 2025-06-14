@@ -23,13 +23,15 @@ renderer.setSize(width, height);
 let i = 0;
 
 function render() {
-  if (i < tubePoints.length - 1) {
-    camera.position.copy(tubePoints[i]); // copy 就是复制传入的点的坐标
-    camera.lookAt(tubePoints[i + 1]);
-    // i += 1;
-  } else {
-    i = 0;
-  }
+  // if (i < tubePoints.length - 1) {
+  //   // // copy 就是复制传入的点的坐标
+  //   // set需要分别传递XYZ三个方向的数字，copy可以直接传Vector3对象
+  //   camera.position.copy(tubePoints[i]);
+  //   camera.lookAt(tubePoints[i + 1]);
+  //   // i += 1;
+  // } else {
+  //   i = 0;
+  // }
   renderer.render(scene, camera);
   requestAnimationFrame(render);
 }

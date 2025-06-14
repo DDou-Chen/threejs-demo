@@ -16,6 +16,11 @@ const geometry = new THREE.TubeGeometry(path, 100, 5, 30);
 
 const loader = new THREE.TextureLoader();
 const texture = loader.load("./stone.png");
+
+// 对于 TubeGeometry：
+// 长度方向通常是 U (wrapS)
+// 圆周方向通常是 V (wrapT)
+// 这里是想在长度方向进行重复贴图 所以用的S
 texture.wrapS = THREE.RepeatWrapping;
 texture.repeat.x = 20; // x 方向重复 20 次
 texture.colorSpace = THREE.SRGBColorSpace;
